@@ -1,0 +1,29 @@
+#!/bin/bash
+apt install wget unzip -y
+cd /opt
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.52/bin/apache-tomcat-9.0.52.zip
+unzip apache-tomcat-9.0.52.zip
+cd /opt/apache-tomcat-9.0.52/bin
+chmod u+x *.sh
+ln -s /opt/apache-tomcat-9.0.52/bin/startup.sh /usr/bin/startTomcat
+ln -s /opt/apache-tomcat-9.0.52/bin/shutdown.sh /usr/bin/stopTomcat
+ 
+
+#vi /opt/apache-tomcat-9.0.52/webapps/manager/META-INF/context.xml
+#Comment the below lines
+#<!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+# allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+
+
+#Create a user
+#vi /opt/apache-tomcat-9.0.52/conf/tomcat-users.xml
+
+
+<user username="sandy" password="sandy" roles="manager-gui,admin-gui,manager-gui" />
+
+
+------------>
+now we need to deploy our war file into tomcat from jenkins server
+
+for that check /var/lib/jenkins/workspace/test/target    @jenkins server
+ 
