@@ -1,0 +1,6 @@
+git branch: 'development', credentialsId: 'git', url: 'https://github.com/Assam2342/maven-web-application.git'
+
+
+
+
+<user username="sandy" password="assam" roles="manager-gui,admin-gui,manager-script"/>
